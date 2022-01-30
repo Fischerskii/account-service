@@ -18,7 +18,6 @@
         <module>currency-service</module>
         <module>stock-service</module>
         <module>gateway-api</module>
-        <module>discovery-service</module>
     </modules>
 
     <properties>

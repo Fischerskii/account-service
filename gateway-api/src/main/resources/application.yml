@@ -3,13 +3,13 @@ server:
 
 service:
   currency:
-    uri: lb://CURRENCY-SERVICE
+    uri: http://localhost:8090
     path:
       all-exchange: /all-exchange
       convert: /convert
     audience: currency-service
   stock:
-    uri: lb://STOCK-SERVICE
+    uri: http://localhost:8010
     path:
       stock-quotes: /get-stock-quotes
     audience: stock-service
@@ -20,7 +20,6 @@ spring:
       client:
         registration:
           auth0:
-            privider: auth0
             client-id: 6GIpCgc2IdAiWUFPdmT79WE5KRvpC4S9
             client-secret: vQIH1zhfbFLCbCXTAofV8VWvQLx9Gf2quTTnUoK4YZ3-cwkDogVwlGackhaxY-OZ
             scope:
@@ -30,20 +29,3 @@ spring:
         provider:
           auth0:
             issuer-uri: https://dev-dnqy-t57.eu.auth0.com/
-  application:
-    name: gateway-api
-
-eureka:
-  client:
-    service-uri:
-      defaultZone: http://localhost:9999/eureka
-
-logging:
-  level:
-    reactor.netty.http.client: DEBUG
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
