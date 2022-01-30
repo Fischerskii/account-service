@@ -17,7 +17,6 @@ import ru.springcourse.service.ExchangeApi;
 @RequiredArgsConstructor
 @Slf4j
 public class CurrencyController {
-
     private final ExchangeApi exchangeApi;
 
     @PostMapping("/convert")
